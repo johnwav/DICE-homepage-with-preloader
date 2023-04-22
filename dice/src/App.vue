@@ -12,7 +12,6 @@ const images = [
 ]
 
 const imageCount = ref(0)
-const loaded = ref(false)
 
 let imageInterval = null
 
@@ -41,17 +40,14 @@ watch(imageCount, () => {
 
 <template>
   <section>
-    <template>
-      <div>
-        <img rel="preload" v-for="(image, index) in images" :src="image"
-          :style="imageCount == index ? 'opacity: 1' : 'opacity: 0'" />
-      </div>
-      <div class="hero-text">
-        <h1 class="text">MORE OF THE <br>
-          SHOWS YOU LOVE
-        </h1>
-      </div>
-    </template>
+    <div>
+      <img v-for="(image, index) in images" :src="image" :style="imageCount == index ? 'opacity: 1' : 'opacity: 0'" />
+    </div>
+    <div class="hero-text">
+      <h1 class="text">MORE OF THE <br>
+        SHOWS YOU LOVE
+      </h1>
+    </div>
   </section>
 </template>
 
