@@ -41,18 +41,17 @@ watch(imageCount, () => {
 
 <template>
   <section>
-    <div>
-      <img rel="preload" v-for="(image, index) in images" :src="image"
-        :style="imageCount == index ? 'opacity: 1' : 'opacity: 0'" />
-    </div>
-    <div class="hero-text">
-      <h1 class="text">MORE OF THE <br>
-        SHOWS YOU LOVE
-        <div style="background-image: url(https://media.tenor.com/-r1FcJGxGFMAAAAC/loading-bar.gif);"></div>
-
-      </h1>
-    </div>
-
+    <template>
+      <div>
+        <img rel="preload" v-for="(image, index) in images" :src="image"
+          :style="imageCount == index ? 'opacity: 1' : 'opacity: 0'" />
+      </div>
+      <div class="hero-text">
+        <h1 class="text">MORE OF THE <br>
+          SHOWS YOU LOVE
+        </h1>
+      </div>
+    </template>
   </section>
 </template>
 
